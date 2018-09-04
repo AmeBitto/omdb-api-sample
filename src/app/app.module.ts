@@ -3,9 +3,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app.routing';
 
@@ -13,13 +15,15 @@ import { AppComponent } from './app.component';
 import { FilmsComponent } from './films/films.component';
 import { FilmInfoComponent } from './film-info/film-info.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FilmSearcherComponent } from './film-searcher/film-searcher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmsComponent,
     FilmInfoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FilmSearcherComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +32,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
 
     // Material modules
-    MatGridListModule,
+    MatFormFieldModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

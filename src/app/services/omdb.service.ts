@@ -13,13 +13,13 @@ export class OmdbService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  searchFilms(searchTitle: string): Observable<any> {
+  searchFilms(title: string): Observable<any> {
     return this._httpClient.get<any>(
       `${this.OMDB_URL}`,
       {
         params: {
           apikey: `${this.API_KEY}`,
-          s: `${searchTitle}`
+          s: `${title}`
         }
       });
   }
