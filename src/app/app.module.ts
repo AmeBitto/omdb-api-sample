@@ -11,8 +11,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app.routing';
 
@@ -45,8 +45,8 @@ import { FilmSearcherComponent } from './film-searcher/film-searcher.component';
     MatSnackBarModule,
     MatBadgeModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
+    MatProgressSpinnerModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

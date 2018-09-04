@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../services/film.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-films',
@@ -14,14 +15,15 @@ export class FilmsComponent implements OnInit {
     return this._filmService.favoriteFilms;
   }
 
-  constructor(private _filmService: FilmService) { }
+  constructor(private _filmService: FilmService,
+              private _router: Router) { }
 
   ngOnInit() {
 
   }
 
   showFilmInfo(film: any): void {
-    console.log(film);
+    this._router.navigate(['/film', film.imdbID]);
   }
 
 }
