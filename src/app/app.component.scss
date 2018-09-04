@@ -26,6 +26,8 @@ $sidebar-width: 300px;
     right: 0px;
     bottom: 0px;
     left: $sidebar-width;
+    padding: 8px;
+    overflow: auto;
   }
 }
 

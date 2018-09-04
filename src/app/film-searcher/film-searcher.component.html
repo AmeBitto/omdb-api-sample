@@ -18,7 +18,7 @@
             <mat-card-subtitle>{{ film.Year }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-actions>
-            <button mat-button color="warn">
+            <button mat-button color="warn" (click)="addToFavorite(film)">
               <span class="fa fa-heart fa-lg"></span>
               Add to favorite
             </button>

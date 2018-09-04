@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OmdbService } from '../services/omdb.service';
+import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-films',
@@ -8,11 +8,20 @@ import { OmdbService } from '../services/omdb.service';
 })
 export class FilmsComponent implements OnInit {
 
-  constructor(private _omdbService: OmdbService) { }
+  displayedColumns: string[] = ['Poster', 'Title', 'Year', 'Type'];
+
+  get films() {
+    return this._filmService.favoriteFilms;
+  }
+
+  constructor(private _filmService: FilmService) { }
 
   ngOnInit() {
-    this._omdbService.searchFilms('test')
-      .subscribe(result => console.log(result));
+
+  }
+
+  showFilmInfo(film: any): void {
+    console.log(film);
   }
 
 }

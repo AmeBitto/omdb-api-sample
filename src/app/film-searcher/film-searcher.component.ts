@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { OmdbService } from '../services/omdb.service';
 import { FilmService } from '../services/film.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-film-searcher',
@@ -17,7 +18,8 @@ export class FilmSearcherComponent implements OnInit {
   private _searchTerm = new Subject<string>();
 
   constructor(private _omdbService: OmdbService,
-              private _filmService: FilmService) { }
+              private _filmService: FilmService,
+              public _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this._searchTerm.pipe(
@@ -38,5 +40,15 @@ export class FilmSearcherComponent implements OnInit {
     } else {
       this.omdbResponse = undefined;
     }
+  }
+
+  addToFavorite(film: any): void {
+    const result = this._filmService.addFavoriteFilm(film);
+
+    const message = (result) ? 'Film added to favorite!' : 'Film alredy exists!';
+
+    this._snackBar.open(message, null, {
+      duration: 2000,
+    });
   }
 }

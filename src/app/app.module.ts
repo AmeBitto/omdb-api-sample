@@ -8,6 +8,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppRoutingModule } from './app.routing';
 
@@ -23,7 +28,7 @@ import { FilmSearcherComponent } from './film-searcher/film-searcher.component';
     FilmsComponent,
     FilmInfoComponent,
     NotFoundComponent,
-    FilmSearcherComponent
+    FilmSearcherComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,12 @@ import { FilmSearcherComponent } from './film-searcher/film-searcher.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
+    MatBadgeModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
