@@ -21,7 +21,17 @@ export class OmdbService {
           apikey: `${this.API_KEY}`,
           s: `${searchTitle}`
         }
-      }
-    );
+      });
+  }
+
+  getFilmInfoById(id: string): Observable<any> {
+    return this._httpClient.get<any>(
+      `${this.OMDB_URL}`,
+      {
+        params: {
+          apikey: `${this.API_KEY}`,
+          i: `${id}`
+        }
+      });
   }
 }
